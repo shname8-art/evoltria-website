@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Our Services - Evoltria</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* Reset & base */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    }
+    body {
+      color: #333;
+      background-color: #f9f9f9;
+      line-height: 1.6;
+    }
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    /* Navbar */
+    header {
+      background: #111;
+      padding: 15px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    header .logo {
+      color: #fff;
+      font-size: 24px;
+      font-weight: bold;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 25px;
+    }
+    nav ul li a {
+      color: #fff;
+      font-size: 16px;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+    nav ul li a:hover {
+      color: #00c3ff;
+    }
+
+    /* Hero section */
+    .hero {
+      background: linear-gradient(to right, #00c3ff, #0066ff);
+      color: #fff;
+      padding: 80px 20px;
+      text-align: center;
+    }
+    .hero h1 {
+      font-size: 42px;
+      margin-bottom: 15px;
+    }
+    .hero p {
+      font-size: 18px;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    /* Services section */
+    .services {
+      max-width: 1200px;
+      margin: 60px auto;
+      padding: 0 20px;
+    }
+    .services h2 {
+      text-align: center;
+      font-size: 32px;
+      margin-bottom: 40px;
+      color: #222;
+      font-weight: bold;
+    }
+    .service-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 25px;
+    }
+    .service-card {
+      background: #fff;
+      border-radius: 12px;
+      padding: 25px;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .service-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 12px 25px rgba(0, 0, 0, 0.12);
+    }
+    .service-card h3 {
+      font-size: 22px;
+      margin-bottom: 15px;
+      color: #0066ff;
+    }
+    .service-card p {
+      font-size: 15px;
+      color: #555;
+    }
+
+    /* Footer */
+    footer {
+      background: #111;
+      color: #bbb;
+      padding: 20px;
+      text-align: center;
+      margin-top: 60px;
+    }
+    footer a {
+      color: #00c3ff;
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="logo">Evoltria</div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="services.html" class="active">Services</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <h1>Our Services</h1>
+    <p>We deliver cutting-edge automation and AI solutions tailored to streamline your business and drive efficiency.</p>
+  </section>
+
+  <!-- Services -->
+  <section class="services">
+    <h2>What We Deliver</h2>
+    <div class="service-grid">
+      <div class="service-card">
+        <h3>System Automation & RPA</h3>
+        <p>Automate recurring business processes, file processing, document extraction, scheduled jobs, and back-office workflows.</p>
+      </div>
+      <div class="service-card">
+        <h3>Workflow Integrations (n8n / Zapier)</h3>
+        <p>Connect CRMs, Google Workspace, email, payment gateways, and databases to create reliable end-to-end processes.</p>
+      </div>
+      <div class="service-card">
+        <h3>Web & API Automation</h3>
+        <p>Custom API integrations, webhooks, authentication flows, and seamless data synchronization between platforms.</p>
+      </div>
+      <div class="service-card">
+        <h3>YouTube & Social Automation</h3>
+        <p>Automate posting, schedule uploads, extract comments/analytics, and create content pipelines for YouTube, Facebook, and Instagram.</p>
+      </div>
+      <div class="service-card">
+        <h3>AI-Powered Agents</h3>
+        <p>Deploy chatbots, document understanding systems, NLP pipelines, and automated decision-making agents.</p>
+      </div>
+      <div class="service-card">
+        <h3>Custom Dashboards & Monitoring</h3>
+        <p>Get real-time insights with dashboards, reporting, and automated alerts to monitor your automation performance.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Evoltria. All rights reserved. | <a href="privacy.html">Privacy Policy</a></p>
+  </footer>
+</body>
+</html>

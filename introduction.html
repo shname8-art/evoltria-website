@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Evoltria - Introduction</title>
+
+<!-- Tailwind CSS -->
+<link href="https://cdn.jsdelivr.net/npm/tailwindcss@3.3.2/dist/tailwind.min.css" rel="stylesheet">
+
+<!-- GSAP -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+
+<!-- Particles.js -->
+<script src="https://cdn.jsdelivr.net/npm/tsparticles@2.11.1/tsparticles.bundle.min.js"></script>
+
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&display=swap" rel="stylesheet">
+
+<!-- 🔗 your external CSS -->
+<link rel="stylesheet" href="css/style.css">
+
+<style>
+  /* Professional Nav Styling */
+  nav ul {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+    padding: 10px 25px;
+    background: rgba(15, 23, 42, 0.8);
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    backdrop-filter: blur(10px);
+  }
+  nav ul li a {
+    color: #fff;
+    font-weight: 600;
+    position: relative;
+    padding: 6px 10px;
+    transition: color 0.3s ease;
+  }
+  nav ul li a::after {
+    content: "";
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: #00ffff;
+    transition: width 0.3s ease;
+  }
+  nav ul li a:hover {
+    color: #00ffff;
+  }
+  nav ul li a:hover::after,
+  nav ul li a.active::after {
+    width: 100%;
+  }
+
+  /* Adjust paragraph + image position */
+  .main {
+    margin-top: -40px; /* move content upward */
+  }
+</style>
+</head>
+<body>
+
+<!-- Particle Background -->
+<div id="tsparticles"></div>
+
+<!-- Header -->
+<header>
+  <img src="assets/images/logo.png" alt="Evoltria Logo" id="header-logo">
+  <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold text-white">Evoltria</h1>
+</header>
+
+<!-- Navigation -->
+<nav class="flex justify-center mt-4 z-10 relative">
+  <ul>
+    <li><a href="introduction.html" class="active">Introduction</a></li>
+    <li><a href="services.html">Services</a></li>
+    <li><a href="products.html">Products</a></li>
+    <li><a href="pricing.html">Pricing</a></li>
+    <li><a href="news.html">News</a></li>
+    <li><a href="contact.html">Contact</a></li>
+    <li><a href="about.html">About</a></li>
+  </ul>
+</nav>
+
+<!-- Main Content -->
+<div class="main">
+  <div class="left">
+    <h2 id="intro-title" class="text-2xl text-cyan-400 mb-2"></h2>
+    <p id="intro-paragraph" class="text-lg text-gray-300"></p>
+    <img id="intro-image" src="" alt="Automation Image">
+  </div>
+  <div class="right">
+    <ul>
+      <li>n8n Project</li>
+      <li>Web Apps</li>
+      <li>Automated Apps</li>
+      <li>Zapier Projects</li>
+    </ul>
+  </div>
+</div>
+
+<script>
+  // Particles
+  tsParticles.load("tsparticles", {
+    fullScreen: { enable: false },
+    particles: {
+      number: { value: 120 },
+      color: { value: "#ffffff" },
+      shape: { type: "circle" },
+      opacity: { value: 0.8 },
+      size: { value: { min: 1, max: 3 } },
+      links: { enable: true, distance: 150, color: "#ffffff", opacity: 0.5, width: 1 },
+      move: { enable: true, speed: 1.5 }
+    },
+    interactivity: { events: { onhover: { enable: true, mode: "grab" } } },
+    detectRetina: true
+  });
+
+  // Intro paragraphs data
+  const introData = [
+    { title: "Automation in Manufacturing", text: "Streamlining industrial processes to improve efficiency and reduce human error.", image: "assets/images/2.webp" },
+    { title: "AI in Business Intelligence", text: "Leveraging AI for predictive analytics and strategic decision-making.", image: "assets/images/3.png" },
+    { title: "Robotic Process Automation", text: "Automating repetitive office tasks to save time and resources.", image: "assets/images/4.jpg" },
+    { title: "Smart AI Assistants", text: "Integrating AI assistants to help with daily workflows and customer support.", image: "assets/images/5.png" },
+    { title: "Automated Web Applications", text: "Creating intelligent apps that handle tasks automatically, saving time and cost.", image: "assets/images/1.jpg" }
+  ];
+
+  let currentIndex = 0;
+  const titleEl = document.getElementById("intro-title");
+  const paraEl = document.getElementById("intro-paragraph");
+  const imgEl = document.getElementById("intro-image");
+
+  function showNextIntro() {
+    const data = introData[currentIndex];
+    gsap.to([titleEl, paraEl, imgEl], { opacity: 0, duration: 0.5, onComplete: () => {
+      titleEl.textContent = data.title;
+      paraEl.textContent = data.text;
+      imgEl.src = data.image;
+      gsap.to([titleEl, paraEl, imgEl], { opacity: 1, duration: 0.8 });
+    }});
+    currentIndex = (currentIndex + 1) % introData.length;
+  }
+
+  // Show first immediately
+  showNextIntro();
+
+  // Shuffle every 5 seconds
+  setInterval(showNextIntro, 5000);
+</script>
+
+</body>
+</html>

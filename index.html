@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Evoltria - Landing</title>
+
+  <!-- Tailwind CSS CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@3.3.2/dist/tailwind.min.css" rel="stylesheet">
+
+  <!-- GSAP CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+
+  <!-- Particles.js CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/tsparticles@2.11.1/tsparticles.bundle.min.js"></script>
+
+  <!-- Google Fonts: Orbitron -->
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&display=swap" rel="stylesheet">
+
+  <!-- 🔗 your external CSS -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Particle Background -->
+  <div id="tsparticles"></div>
+
+  <!-- Landing Content -->
+  <div class="landing-content">
+    <!-- Logo -->
+    <div id="logo">
+      <img src="assets/images/logo.png" alt="Evoltria Logo">
+    </div>
+
+    <!-- Company Title -->
+    <h1 id="company-title" class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl opacity-0 mb-4">
+      Evoltria
+    </h1>
+
+    <!-- Company Description -->
+    <p id="company-desc" class="opacity-0 text-base sm:text-lg md:text-xl">
+      We create cutting-edge automation projects, intelligent AI solutions, and smart systems that redefine efficiency and innovation.
+    </p>
+  </div>
+
+  <script>
+    // Particles Configuration
+    tsParticles.load("tsparticles", {
+      fullScreen: { enable: false },
+      particles: {
+        number: { value: 120 },
+        color: { value: "#ffffff" },
+        shape: { type: "circle" },
+        opacity: { value: 0.8 },
+        size: { value: { min: 1, max: 3 } },
+        links: { enable: true, distance: 150, color: "#ffffff", opacity: 0.5, width: 1 },
+        move: { enable: true, speed: 1.5 }
+      },
+      interactivity: { events: { onhover: { enable: true, mode: "grab" } } },
+      detectRetina: true
+    });
+
+    // GSAP Animations
+    gsap.from("#logo", { scale: 0, duration: 1.2, ease: "back.out(1.7)" });
+    gsap.to("#logo", { y: -40, delay: 1, duration: 1.2 });
+
+    gsap.from("#company-title", { 
+      opacity: 0, 
+      scale: 0.8, 
+      duration: 1.2, 
+      delay: 2, 
+      ease: "power2.out"
+    });
+
+    // Title glow pulse animation
+    gsap.to("#company-title", {
+      textShadow: "0 0 12px #00ffff, 0 0 24px #00ffff, 0 0 36px #00ffff",
+      repeat: -1,
+      yoyo: true,
+      duration: 1.5,
+      delay: 2
+    });
+
+    gsap.to("#company-desc", { opacity: 1, y: -25, delay: 2.5, duration: 1.2, ease: "power2.out" });
+
+    // Redirect to introduction page after 5 seconds
+    setTimeout(() => {
+      window.location.href = "introduction.html";
+    }, 5000);
+  </script>
+
+</body>
+</html>

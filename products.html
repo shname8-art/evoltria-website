@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Our Products - Evoltria</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f9f9fb;
+      color: #333;
+    }
+
+    header {
+      background: #0f172a;
+      color: #fff;
+      padding: 1.2rem 3rem;
+      text-align: center;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2rem;
+      font-weight: 700;
+    }
+
+    .products-container {
+      max-width: 1100px;
+      margin: 3rem auto;
+      padding: 0 1.5rem;
+      display: grid;
+      gap: 2rem;
+    }
+
+    .product-card {
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+      padding: 2rem;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .product-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+    }
+
+    .product-card h2 {
+      font-size: 1.6rem;
+      margin-bottom: 1rem;
+      color: #0f172a;
+    }
+
+    .product-card p {
+      font-size: 1rem;
+      line-height: 1.6;
+      margin-bottom: 1.5rem;
+      color: #444;
+    }
+
+    video {
+      width: 100%;
+      border-radius: 10px;
+      margin-bottom: 1rem;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 0.8rem 1.6rem;
+      background: #0f172a;
+      color: #fff;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 500;
+      transition: background 0.3s;
+    }
+
+    .btn:hover {
+      background: #1e293b;
+    }
+
+    footer {
+      margin-top: 3rem;
+      padding: 1.5rem;
+      text-align: center;
+      background: #0f172a;
+      color: #fff;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Our Products</h1>
+  </header>
+
+  <section class="products-container">
+
+    <!-- Product 1 -->
+    <div class="product-card">
+      <h2>Badminton — AI Referee</h2>
+      <p>Badminton Automated Referee — detects goals and fouls in realtime and for recorded matches. The system uses object detection, tracking and rule-based decisioning to flag events with timestamps and provide match summaries. Demo video provided.</p>
+      <video controls>
+        <source src="assets/videos/badminton-demo.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+      <a href="#" class="btn">Learn More</a>
+    </div>
+
+    <!-- Product 2 -->
+    <div class="product-card">
+      <h2>Automated Student Data Management System</h2>
+      <p>I developed and delivered a UK-based Automated Student Data Management System designed to streamline student onboarding and administration with one-click automation. The system:</p>
+      <ul>
+        <li>Extracts key details from uploaded documents and appends to structured sheets.</li>
+        <li>Generates learner IDs, usernames, and passwords automatically and supports multiple college formats.</li>
+        <li>Creates custom installment plans, tracks due dates, sends reminders and confirmations (email & WhatsApp).</li>
+        <li>Automates assignment schedules and reminders; stores submission confirmations and updates databases in one click.</li>
+      </ul>
+      <p>This solution significantly reduced manual work and errors for multiple UK colleges.</p>
+      <video controls>
+        <source src="assets/videos/student-system-demo1.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+      <video controls>
+        <source src="assets/videos/student-system-demo2.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+      <a href="#" class="btn">Learn More</a>
+    </div>
+
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Evoltria. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,148 @@
+<!-- Contact Section -->
+<section id="contact">
+  <h2 class="section-title">📩 Contact Us</h2>
+  <p class="section-subtitle">Available 24/7 for AI Automation & Support</p>
+  
+  <div class="contact-container">
+    <!-- WhatsApp -->
+    <div class="contact-card">
+      <i class="fab fa-whatsapp"></i>
+      <h3>WhatsApp</h3>
+      <button onclick="showContact('WhatsApp: +92 334 8816322 / +92 330 9170866')">Chat Now</button>
+    </div>
+
+    <!-- Gmail -->
+    <div class="contact-card">
+      <i class="fas fa-envelope"></i>
+      <h3>Email</h3>
+      <button onclick="showContact('Emails: shname8@gmail.com | mh2267574@gmail.com')">Send Email</button>
+    </div>
+
+    <!-- Facebook -->
+    <div class="contact-card">
+      <i class="fab fa-facebook"></i>
+      <h3>Facebook</h3>
+      <button onclick="window.open('https://www.facebook.com/share/1C3YoWoEBb/', '_blank')">Visit Page</button>
+    </div>
+  </div>
+</section>
+
+<!-- Popup Modal -->
+<div id="popup" class="popup">
+  <span class="close" onclick="closePopup()">&times;</span>
+  <p id="popup-content"></p>
+</div>
+
+<!-- Font Awesome Icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+/* Contact Section */
+#contact {
+  padding: 80px 20px;
+  background: #000;
+  color: #fff;
+  text-align: center;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+  color: #0ff;
+  text-shadow: 0 0 10px #0ff;
+}
+
+.section-subtitle {
+  margin-bottom: 40px;
+  font-size: 1.2rem;
+  color: #aaa;
+}
+
+.contact-container {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.contact-card {
+  background: #111;
+  padding: 30px;
+  border-radius: 15px;
+  width: 260px;
+  box-shadow: 0 0 15px rgba(0, 255, 255, 0.5);
+  transition: 0.3s;
+  text-align: center;
+}
+
+.contact-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 25px rgba(0, 255, 255, 0.8);
+}
+
+.contact-card i {
+  font-size: 40px;
+  margin-bottom: 15px;
+  color: #0ff;
+  text-shadow: 0 0 15px #0ff;
+}
+
+.contact-card button {
+  margin-top: 15px;
+  padding: 10px 20px;
+  background: none;
+  border: 2px solid #0ff;
+  border-radius: 10px;
+  color: #0ff;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: 0.3s;
+  text-shadow: 0 0 10px #0ff;
+}
+
+.contact-card button:hover {
+  background: #0ff;
+  color: #000;
+  box-shadow: 0 0 20px #0ff;
+}
+
+/* Popup Styling */
+.popup {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #111;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 0 25px rgba(0, 255, 255, 0.8);
+  text-align: center;
+  z-index: 1000;
+}
+
+.popup p {
+  font-size: 1.2rem;
+  color: #0ff;
+}
+
+.popup .close {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  font-size: 25px;
+  color: #0ff;
+  cursor: pointer;
+}
+</style>
+
+<script>
+function showContact(info) {
+  document.getElementById("popup-content").innerText = info;
+  document.getElementById("popup").style.display = "block";
+}
+
+function closePopup() {
+  document.getElementById("popup").style.display = "none";
+}
+</script>

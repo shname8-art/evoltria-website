@@ -1,0 +1,64 @@
+<section id="about" class="about-section" style="padding:60px; background:#0d0d0d; color:#fff; font-family:Arial, sans-serif;">
+  <div style="max-width:900px; margin:auto; text-align:center;">
+    <h2 style="font-size:2.5rem; margin-bottom:20px; color:#00ffe7; text-shadow:0 0 10px #00ffe7;">About Us</h2>
+    <p style="font-size:1.2rem; line-height:1.8; color:#ccc;">
+      🚀 Founded in <span style="color:#00ffe7; font-weight:bold;">July 2025</span>, our company is on a mission to 
+      <span style="color:#ff00ff;">turn manual work into smart automation</span>.  
+      We specialize in AI-powered solutions, custom automation software, and intelligent systems that 
+      reduce errors, save time, and supercharge productivity.  
+      <br><br>
+      From automated data management to real-time AI refereeing for sports, 
+      we create innovative tools designed for the future of automation.
+    </p>
+
+    <div style="margin-top:40px;">
+      <h3 style="color:#00ffe7; font-size:1.8rem; margin-bottom:15px;">Meet the Founders</h3>
+      <div style="display:flex; justify-content:center; gap:50px; flex-wrap:wrap;">
+        
+        <!-- Founder 1 -->
+        <div class="founder-card" style="position:relative; cursor:pointer;">
+          <h4 style="font-size:1.3rem; color:#fff; text-shadow:0 0 8px #00ffe7;">Bilal Saeed</h4>
+          <div class="popup">
+            Creative Visionary ⚡ <br> Turning ideas into automated reality.
+          </div>
+        </div>
+
+        <!-- Founder 2 -->
+        <div class="founder-card" style="position:relative; cursor:pointer;">
+          <h4 style="font-size:1.3rem; color:#fff; text-shadow:0 0 8px #ff00ff;">Muhammed Haseeb</h4>
+          <div class="popup">
+            Tech Architect 🛠️ <br> Building systems that power the future.
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Styling for popup hover effect -->
+<style>
+.founder-card .popup {
+  visibility: hidden;
+  opacity: 0;
+  position: absolute;
+  bottom: -70px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0,0,0,0.9);
+  color: #00ffe7;
+  padding: 12px 18px;
+  border-radius: 12px;
+  white-space: nowrap;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 12px #00ffe7, 0 0 24px #ff00ff;
+  text-align:center;
+}
+
+.founder-card:hover .popup {
+  visibility: visible;
+  opacity: 1;
+  bottom: -90px;
+}
+</style>
