@@ -5,7 +5,7 @@ html, body {
   font-family: 'Orbitron', sans-serif;
   background: #000;
   color: #fff;
-  overflow: hidden;
+  overflow-x: hidden; /* prevent horizontal scroll */
 }
 #tsparticles {
   position: fixed;
@@ -26,8 +26,6 @@ html, body {
   text-align: center;
   padding: 0 1rem;
 }
-
-/* Logo with small solid white background */
 #logo {
   background-color: #ffffff;
   padding: 12px;
@@ -35,19 +33,15 @@ html, body {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 6px; /* (kept same intent) */
+  margin-bottom: 6px;
   box-shadow: 0 0 15px rgba(255,255,255,0.3);
 }
 #logo img { max-width: 160px; height: auto; }
-
-/* Title glow color */
 #company-title {
   text-shadow: 0 0 8px #00ffff, 0 0 16px #00ffff, 0 0 24px #00ffff;
   color: #00ffff;
   font-weight: 700;
 }
-
-/* Description text */
 #company-desc {
   color: #ccc;
   line-height: 1.6;
@@ -57,13 +51,14 @@ html, body {
 }
 
 /* ===== introduction page (introduction.html) ===== */
-/* Header */
 header {
   z-index: 10;
   position: relative;
   display: flex;
   align-items: center;
+  justify-content: space-between;
   padding: 1rem 2rem;
+  flex-wrap: wrap; /* responsive wrap */
 }
 #header-logo {
   max-width: 80px;
@@ -73,12 +68,12 @@ header {
   border-radius: 9999px;
 }
 
-/* Navigation */
 nav ul {
   display: flex;
   gap: 2rem;
   font-weight: 500;
   position: relative;
+  flex-wrap: wrap;
 }
 nav ul li {
   cursor: pointer;
@@ -103,7 +98,6 @@ nav ul li.active::after {
   box-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff, 0 0 30px #00ffff;
 }
 
-/* Main content layout */
 .main {
   display: flex;
   flex-direction: row;
@@ -113,7 +107,7 @@ nav ul li.active::after {
   padding: 2rem;
   z-index: 10;
   position: relative;
-  margin-top: -20px; /* pull closer to nav as you wanted */
+  margin-top: -20px;
 }
 .left {
   flex: 2;
@@ -132,8 +126,6 @@ nav ul li.active::after {
   box-shadow: 0 0 15px #00ffff;
   border-radius: 6px;
 }
-
-/* Right side projects */
 .right {
   flex: 0.5;
   display: flex;
@@ -164,23 +156,24 @@ nav ul li.active::after {
   box-shadow: 0 0 8px #00ffff, 0 0 16px #00ffff;
 }
 
-/* Responsive (intro page) */
+/* ===== responsive ===== */
 @media (max-width: 1024px) {
-  .main { flex-direction: column; justify-content: flex-start; margin-top: 0; }
-  .left { padding-right: 0; align-items: center; }
+  .main { flex-direction: column; justify-content: flex-start; margin-top: 0; height: auto; }
+  .left { padding-right: 0; align-items: center; text-align: center; }
   .left img { max-height: 200px; }
   .right { flex-direction: row; margin-left: 0; transform: rotate(0deg); justify-content: center; margin-top: 1rem; }
   .right ul { flex-direction: row; gap: 2rem; }
+  nav ul { justify-content: center; gap: 1rem; }
 }
-/* ===== services page (services.html) ===== */
+
+/* ===== services page ===== */
 .services-wrapper {
   z-index: 10;
   position: relative;
   padding: 4rem 2rem;
   height: calc(100vh - 120px);
-  overflow-y: auto; /* allows scroll if content exceeds */
+  overflow-y: auto;
 }
-
 .services-wrapper h1 {
   font-size: 2.5rem;
   font-weight: 700;
@@ -189,7 +182,6 @@ nav ul li.active::after {
   margin-bottom: 2rem;
   text-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff;
 }
-
 .services-list {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -197,7 +189,6 @@ nav ul li.active::after {
   max-width: 1200px;
   margin: 0 auto;
 }
-
 .service-card {
   background: rgba(255,255,255,0.05);
   border: 1px solid rgba(0,255,255,0.4);
@@ -206,51 +197,36 @@ nav ul li.active::after {
   text-align: left;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-
 .service-card:hover {
   transform: translateY(-6px);
   box-shadow: 0 0 15px #00ffff, 0 0 30px rgba(0,255,255,0.6);
 }
-
 .service-card h3 {
   font-size: 1.4rem;
   color: #00ffff;
   margin-bottom: 0.75rem;
   font-weight: 600;
 }
-
 .service-card p {
   font-size: 1rem;
   color: #ccc;
   line-height: 1.6;
 }
-s
-/* Pricing Section */
+
+/* ===== pricing section ===== */
 .pricing-section {
   padding: 80px 20px;
   background: #f9f9f9;
   text-align: center;
 }
-
-.section-title {
-  font-size: 2.5rem;
-  margin-bottom: 10px;
-  color: #222;
-}
-
-.section-subtitle {
-  font-size: 1.2rem;
-  color: #666;
-  margin-bottom: 50px;
-}
-
+.section-title { font-size: 2.5rem; margin-bottom: 10px; color: #222; }
+.section-subtitle { font-size: 1.2rem; color: #666; margin-bottom: 50px; }
 .pricing-container {
   display: flex;
   justify-content: center;
   gap: 30px;
   flex-wrap: wrap;
 }
-
 .pricing-card {
   background: #fff;
   border-radius: 15px;
@@ -259,69 +235,28 @@ s
   width: 300px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-
 .pricing-card:hover {
   transform: translateY(-10px);
   box-shadow: 0 12px 30px rgba(0,0,0,0.15);
 }
-
-.pricing-card h2 {
-  font-size: 1.8rem;
-  color: #333;
-  margin-bottom: 15px;
-}
-
-.pricing-card .price {
-  font-size: 1.5rem;
-  color: #0078ff;
-  margin-bottom: 20px;
-}
-
-.pricing-card ul {
-  list-style: none;
-  padding: 0;
-  margin-bottom: 25px;
-}
-
-.pricing-card ul li {
-  margin: 10px 0;
-  color: #555;
-  font-size: 0.95rem;
-}
-
-.pricing-card .btn-popup {
-  background: #0078ff;
-  color: #fff;
-  border: none;
-  padding: 12px 20px;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: background 0.3s ease;
-}
-
-.pricing-card .btn-popup:hover {
-  background: #005fcc;
-}
-
-.pricing-card.highlight {
-  border: 2px solid #0078ff;
-  transform: scale(1.05);
-}
+.pricing-card h2 { font-size: 1.8rem; color: #333; margin-bottom: 15px; }
+.pricing-card .price { font-size: 1.5rem; color: #0078ff; margin-bottom: 20px; }
+.pricing-card ul { list-style: none; padding: 0; margin-bottom: 25px; }
+.pricing-card ul li { margin: 10px 0; color: #555; font-size: 0.95rem; }
+.pricing-card .btn-popup { background: #0078ff; color: #fff; border: none; padding: 12px 20px; border-radius: 8px; cursor: pointer; transition: background 0.3s ease; }
+.pricing-card .btn-popup:hover { background: #005fcc; }
+.pricing-card.highlight { border: 2px solid #0078ff; transform: scale(1.05); }
 
 /* Popup */
 .popup-overlay {
   position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
+  top: 0; left: 0; right: 0; bottom: 0;
   display: none;
   justify-content: center;
   align-items: center;
   background: rgba(0,0,0,0.6);
   z-index: 1000;
 }
-
 .popup-content {
   background: #fff;
   padding: 30px;
@@ -331,29 +266,17 @@ s
   box-shadow: 0 8px 25px rgba(0,0,0,0.2);
   animation: popupAnim 0.3s ease;
 }
+.popup-content h2 { margin-bottom: 15px; font-size: 1.5rem; color: #222; }
+.popup-content .email { font-weight: bold; color: #0078ff; margin-top: 10px; }
+.close-btn { position: absolute; top: 15px; right: 25px; font-size: 1.5rem; cursor: pointer; color: #333; }
+@keyframes popupAnim { from { transform: scale(0.8); opacity: 0; } to { transform: scale(1); opacity: 1; } }
 
-.popup-content h2 {
-  margin-bottom: 15px;
-  font-size: 1.5rem;
-  color: #222;
-}
-
-.popup-content .email {
-  font-weight: bold;
-  color: #0078ff;
-  margin-top: 10px;
-}
-
-.close-btn {
-  position: absolute;
-  top: 15px;
-  right: 25px;
-  font-size: 1.5rem;
-  cursor: pointer;
-  color: #333;
-}
-
-@keyframes popupAnim {
-  from { transform: scale(0.8); opacity: 0; }
-  to { transform: scale(1); opacity: 1; }
+/* ===== additional mobile tweaks ===== */
+@media (max-width: 480px) {
+  .main { padding: 1rem; }
+  nav ul { gap: 0.5rem; font-size: 0.9rem; }
+  .pricing-card { width: 90%; padding: 30px 15px; }
+  .services-list { gap: 1rem; }
+  .left img { max-height: 180px; }
+  .right ul { gap: 1rem; flex-wrap: wrap; justify-content: center; }
 }
